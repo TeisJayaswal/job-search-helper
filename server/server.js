@@ -2,8 +2,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+
 //express app
 const app = express();
+const jobRoutes = require("./routes/jobs");
+const userRoutes = require("./routes/user");
 
 //middleware
 app.use(express.json());
@@ -11,6 +15,9 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+
+app.use("/api/jobs", jobRoutes);
+app.use("/api/user", userRoutes);
 
 //connect to db
 mongoose
