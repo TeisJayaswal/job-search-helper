@@ -79,15 +79,17 @@ const JobForm = () => {
        onChange={(e) => setNotes(e.target.value)}
        value={notes}>Might include any other relevant details such location, remote-friendly, salary, etc.
       </textarea>
+      <div className="applied">
       <label>Applied? </label>
-      <input
-      type="checkbox"
-      defaultChecked={true}
-      value={applied}
-      onChange={handleChange}
-      id="applied"
-      name="applied"
-      />
+        <input
+        type="checkbox"
+        checked={applied}
+        value={applied}
+        onChange={handleChange}
+        id="applied"
+        name="applied"
+        />
+      </div>
       <button>Add Job</button>
       {error && <div className="error">{error}</div>}
     </form>

@@ -27,16 +27,21 @@ const JobDetails =({ job }) => {
   return (
     <div className="job-details">
       <h4>{job.title}</h4>
-      <p><strong>{job.company}</strong></p>
+      <p><strong>@ {job.company}</strong></p>
       <a href={job.link}><p><strong>Link to Listing</strong></p></a>
-      <input
-          type="checkbox"
-          value={job.applied}
-          // onChange={handleChange}
-          id="applied"
-          name="applied"
-        />
       <p><strong>Notes: </strong>{job.notes}</p>
+      <div className="applied">
+        <p>Applied: </p>
+      
+        <input
+            type="checkbox"
+            value={job.applied}
+            // onChange={handleChange}
+            id="applied"
+            name="applied"
+            checked={job.applied}
+          />
+        </div>
       <p>{formatDistanceToNow(new Date(job.createdAt), {addSuffix: true })}</p>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
     </div>

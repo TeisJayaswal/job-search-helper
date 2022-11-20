@@ -15,8 +15,10 @@ const Navbar = () => {
     <header>
       <div className="container">
         <Link to="/">
-          <img className="nav-logo" src={Logo} alt="Job-Search-Logo" />
-          <h1>Job Search Helper</h1>
+          <div className="logo-header">
+            <img className="nav-logo" src={Logo} alt="Job-Search-Logo" />
+            <h1>Job Search Helper</h1>
+          </div>
         </Link>
         <nav>
           {user && (
