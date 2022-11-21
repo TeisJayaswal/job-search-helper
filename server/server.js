@@ -6,6 +6,8 @@ require("dotenv").config();
 
 //express app
 const app = express();
+const PORT = process.env.PORT || 3030;
+
 const jobRoutes = require("./routes/jobs");
 const userRoutes = require("./routes/user");
 
@@ -24,7 +26,7 @@ mongoose
   .connect(process.env.MONG_URI)
   .then(() => {
     // listen for requests
-    app.listen(process.env.PORT, () => {
+    app.listen(PORT, () => {
       console.log("connected to db and listening on port", process.env.PORT);
     });
   })
