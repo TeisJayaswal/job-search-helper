@@ -27,6 +27,8 @@ const Home = () => {
 
 }, [dispatch, user])
 
+console.log(jobs)
+
 return (
   <div className="home">
     <div className="jobs">

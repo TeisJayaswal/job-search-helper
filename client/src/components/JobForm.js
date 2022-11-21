@@ -8,7 +8,7 @@ const JobForm = () => {
   const { user } = useAuthContext()
   const [title, setTitle] = useState('')
   const [company, setCompany] = useState('')
-  const [applied, setApplied] = useState(true)
+  const [applied, setApplied] = useState(false)
   const [link, setLink] = useState('')
   const [notes, setNotes] = useState('')
   const [error, setError] = useState(null)
@@ -75,11 +75,15 @@ const JobForm = () => {
       />
       <label>Notes: </label>
       <textarea
+       rows="6" 
+       cols="43"
        type="text"
+       className="notes"
        onChange={(e) => setNotes(e.target.value)}
-       value={notes}>Might include any other relevant details such location, remote-friendly, salary, etc.
+       placeholder="Might include any relevant details such company mission, location, remote-friendly, salary, etc."
+       value={notes}>
       </textarea>
-      <div className="applied">
+      <div className="applied-form">
       <label>Applied? </label>
         <input
         type="checkbox"

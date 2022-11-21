@@ -4,6 +4,7 @@
 /* layout */
 :root {
   --primary: #369694;
+  --secondary: #8c52ff;
   --error: #e7195a;
 }
 body {
@@ -34,10 +35,6 @@ header a {
 
 /* homepage */
 
-.create {
-  box-shadow: 2px 2px 2px 5px rgba(0,0,0,0.05);
-  padding: 20px;
-}
 .home {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -60,6 +57,7 @@ header a {
   margin: 0;
   font-size: 0.9em;
   color: #555;
+  margin-bottom: 1vh;
 }
 .job-details span {
   position: absolute;
@@ -71,8 +69,21 @@ header a {
   border-radius: 50%;
   color: #333;
 }
+.company-name {
+  font-size: 1.1em !important;
+  /* margin-bottom: 2vh !important; */
+}
+
+/* .notes-output {
+  width: 30%;
+} */
 
 /* new job form */
+.create {
+  box-shadow: 2px 2px 2px 5px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
 label, input {
   display: block;
 }
@@ -93,6 +104,9 @@ form button {
   font-family: "Poppins";
   border-radius: 4px;
   cursor: pointer;
+}
+form textarea {
+  font-family: "Poppins";
 }
 div.error {
   padding: 10px;
@@ -142,12 +156,26 @@ form.signup, form.login {
   border-radius: 4px;
 }
 
-.applied {
+.applied,
+.applied-form {
   display: flex;
   align-items: center;
 }
 
+.applied-form {
+  margin: 25px 0 25px 0;
+}
 .applied input {
   max-width: 20px;
   margin: 0;
+  margin-bottom: 1vh;
 }
+
+.applied-form input {
+  max-width: 20px;
+  margin: 0;
+  /* margin-bottom: 1vh; */
+}
+
+
+
