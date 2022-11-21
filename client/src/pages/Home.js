@@ -137,9 +137,7 @@ return (
       <div className="sort-block" onClick={toggleIsActive}>
         <strong>Sort By:</strong> {sortByRecent ? <span>Most Recent</span> : sortByOldest ? <span>Oldest</span> : sortByApplied ? <span>Applied</span> : sortByNotApplied ? <span>Not Applied</span> : ""}<strong>  ↓  </strong>
         <ul className="sort-bar" style={{
-          display: !isActive ? 'none' : 'block',
-          color: !isActive ? 'white' : '',
-        }}>
+          display: !isActive ? 'none' : 'block'}}>
           <li onClick={toggleMostRecent}>Most Recent</li>
           <li onClick={toggleOldest}>Oldest</li>
           <li onClick={toggleApplied}>Applied</li>
