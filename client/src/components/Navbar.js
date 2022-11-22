@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom"
+import { useLogin } from "../hooks/useLogin"
 import { useLogout } from "../hooks/useLogout"
 import { useAuthContext } from "../hooks/useAuthContext"
 const Logo = require("../images/job-search-logo.png")
 
+
 const Navbar = () => {
   const { logout } = useLogout( )
   const { user } = useAuthContext()
+  const { login } = useLogin()
 
   const handleClick = () => {
     logout()
+  }
+
+  const handleLoginDemo = async (e) => {
+    e.preventDefault()
+    await login("sampleuser123@gmail.com", "sampleuser")
   }
 
   return (
@@ -31,6 +39,7 @@ const Navbar = () => {
             <div>
             <Link to="/login">Login</Link>
             <Link to="/signup">Signup</Link>
+            <button onClick={handleLoginDemo}>Login as Demo User</button>
           </div>
           )}
           

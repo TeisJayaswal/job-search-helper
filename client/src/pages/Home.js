@@ -64,71 +64,34 @@ const toggleNotApplied= () => {
   setSortOldest(false)
   setSortApplied(false)
 }
-  // jobs.forEach(element => {
-  //   console.log(new Date(element.createdAt))
-  // });
+  
+function sortByDate() {
+  return function(a, b) {
+    // console.log(a.createdAt)
+    return (new Date(b.createdAt) - new Date(a.createdAt))
+  }
+}
 
-  // const sortedByRecentDate = jobs.sort(function(a,b){
-  //   // Turn your strings into dates, and then subtract them
-  //   // to get a value that is either negative, positive, or zero.
-  //   return new Date(b.createdAt) - new Date(a.createdAt);
-  // });
+function sortByOldestDate() {
+  return function(a, b) {
+    // console.log(a.createdAt)
+    return (new Date(a.createdAt) - new Date(b.createdAt))
+  }
+}
 
-  // console.log(sortedByRecentDate)
-    // const sortByDate = (a, b) => {
-    //   return b.createdAt - a.createdAt;
-    // }
-    function sortByDate() {
-      return function(a, b) {
-        // console.log(a.createdAt)
-        return (new Date(b.createdAt) - new Date(a.createdAt))
-      }
-    }
+function sortByAppliedStatus() {
+  return function(a, b) {
+    // console.log(a.createdAt)
+    return (b.applied - a.applied)
+  }
+}
 
-    function sortByOldestDate() {
-      return function(a, b) {
-        // console.log(a.createdAt)
-        return (new Date(a.createdAt) - new Date(b.createdAt))
-      }
-    }
-
-    function sortByAppliedStatus() {
-      return function(a, b) {
-        // console.log(a.createdAt)
-        return (b.applied - a.applied)
-      }
-    }
-
-    function sortByNotAppliedStatus() {
-      return function(a, b) {
-        // console.log(a.createdAt)
-        return (a.applied - b.applied)
-      }
-    }
-    // console.log(jobs.sort(sortByDate()))
-    // jobs.sort(function(a,b){
-    //   console.log(a.createdAt)
-    //   // Turn your strings into dates, and then subtract them
-    //   // to get a value that is either negative, positive, or zero.
-    //   return b.createdAt - a.createdAt;
-    // });
-  // const sortedByDate = jobs.sort(function(a,b){
-  //   console.log(a.createdAt)
-  //   // Turn your strings into dates, and then subtract them
-  //   // to get a value that is either negative, positive, or zero.
-  //   return b.createdAt - a.createdAt;
-  // });
-  // const sortedByOldestDate = jobs.sort(function(a,b){
-  //   // Turn your strings into dates, and then subtract them
-  //   // to get a value that is either negative, positive, or zero.
-  //   return a.createdAt - b.createdAt;
-  // });
-  // const sortedByDate = jobs.sort((a, b) => a.createdAt - b.createdAt)
-  // const sortedByOldestDate = jobs.sort((a, b) => b.createdAt - a.createdAt)
-
-  // console.log(sortedByDate)
-  // console.log(sortedByOldestDate)
-
+function sortByNotAppliedStatus() {
+  return function(a, b) {
+    // console.log(a.createdAt)
+    return (a.applied - b.applied)
+  }
+}
 
 return (
 
