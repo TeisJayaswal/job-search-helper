@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3030;
 
 const jobRoutes = require("./routes/jobs");
 const userRoutes = require("./routes/user");
+const healthCheckRoutes = require("./routes/healthcheck");
 
 //middleware
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 
 app.use("/api/jobs", jobRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/healthcheck", healthCheckRoutes);
 
 //connect to db
 mongoose
