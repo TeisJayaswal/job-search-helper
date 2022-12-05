@@ -19,6 +19,7 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 });
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.use("/api/jobs", jobRoutes);
 app.use("/api/user", userRoutes);
@@ -29,6 +30,13 @@ mongoose
   .connect(process.env.MONG_URI)
   .then(() => {
     // listen for requests
+
+    app.get("*", function (request, response) {
+      response.sendFile(
+        path.resolve(__dirname, "./client/build", "index.html")
+      );
+    });
+
     app.listen(PORT, () => {
       console.log("connected to db and listening on port", process.env.PORT);
     });
@@ -36,8 +44,3 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
