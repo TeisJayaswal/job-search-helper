@@ -242,4 +242,63 @@ form.signup, form.login {
 }
 
 
+@media screen and (max-width: 414px) {
+  /* navbar */
+nav div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav a {
+  border-bottom: #333 1px solid;
+  margin-left: 15px;
+}
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 15px;
+  margin-top: 5px;
+}
 
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  max-height: 10vh;
+}
+
+.logo-header h1 {
+  font-size: 5vw;
+}
+
+nav div span {
+  display: none;
+}
+
+.home {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 7vh;
+}
+
+.home .create {
+  max-height: 100vh;
+}
+
+.job-details textarea {
+  max-width: 80vw;
+}
+
+.sort-block {
+  width: 45%;
+}
+}
